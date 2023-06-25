@@ -87,7 +87,8 @@ img {
 /* sidebar */
 .sidebar {
     position: fixed;
-    background: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
     top: 0;
     left: 0;
     width: 100%;
@@ -101,6 +102,46 @@ img {
     -moz-transition: all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
+}
+
+.sidebar-center {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    padding: 1rem;
+}
+
+.sidebar-close-btn {
+    display: flex;
+    padding: 1rem;
+    font-size: 2rem;
+    justify-content: flex-end;
+    background: none;
+    border: none;
+    color: #005ae2;
+}
+
+.sidebar-links {
+    /* background: blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #0065fe;
+    font-size: 1.5rem;
+    align-items: center;
+}
+
+.sidebar-link {
+    color: #0065fe;
+}
+
+.sidebar.show {
+    transform: translateX(0);
+}
+
+.sidebar-open-btn,
+.sidebar-close-btn {
+    cursor: pointer;
 }
 
 /* NAV */
